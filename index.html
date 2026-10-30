@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Section -->
+  <div id="loginGate" class="login-container">
+    <h2>Admin Login</h2>
+    <input type="text" id="adminUser" placeholder="Username">
+    <input type="password" id="adminPass" placeholder="Password">
+    <button onclick="handleLogin()">Login</button>
+    <p id="loginError" class="error"></p>
+  </div>
+
+  <!-- Main Dashboard (Hidden by default) -->
+  <div id="adminApp" class="dashboard-container hidden">
+    <h1>Portfolio Content Manager</h1>
+    
+    <div class="form-group">
+      <h3>Basic Information</h3>
+      <label>Name</label>
+      <input type="text" id="nameInput">
+      
+      <label>Tagline / Title</label>
+      <input type="text" id="titleInput">
+      
+      <label>About Me</label>
+      <textarea id="aboutInput" rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+      <h3>Contact Links</h3>
+      <label>Email</label>
+      <input type="text" id="emailInput">
+      
+      <label>GitHub URL</label>
+      <input type="text" id="githubInput">
+      
+      <label>LinkedIn URL</label>
+      <input type="text" id="linkedinInput">
+    </div>
+
+    <button class="save-btn" onclick="savePortfolioData()">Save Changes</button>
+  </div>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
